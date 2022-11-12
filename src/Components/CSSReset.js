@@ -9,7 +9,9 @@ export const CSSReset = createGlobalStyle`
   }
   body {
     font-family: sans-serif;
+    overflow-x: hidden;
   }
+ 
   /* NextJS */
   html {
     display: flex;
@@ -33,6 +35,19 @@ export const CSSReset = createGlobalStyle`
     &:hover,
     &:focus {
       opacity: .5;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    ::-webkit-scrollbar-track {
+    background-color: #f9f9f9;
+    }
+    ::-webkit-scrollbar {
+        width: 6px;
+        background: #F4F4F4;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #dad7d7;
     }
   }
 `;

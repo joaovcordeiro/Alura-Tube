@@ -31,6 +31,7 @@ export const StyledTimeline = styled.div`
   width: 100%;
   padding: 16px;
   overflow: hidden;
+  background-color: ${({ theme }) => theme.textColorBase || "#f9f9f9"};
   h2 {
     font-size: 16px;
     margin-bottom: 16px;
@@ -58,8 +59,10 @@ export const StyledTimeline = styled.div`
       grid-auto-columns: minmax(200px, 1fr);
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
+
       a {
         scroll-snap-align: start;
+
         span {
           padding-top: 8px;
           display: block;
