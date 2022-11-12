@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Timeline({ playlists }) {
+export default function Timeline({ playlists, valorDoFiltro }) {
   const playlistsNames = Object.keys(playlists);
   return (
     <StyledTimeline>
@@ -10,14 +10,20 @@ export default function Timeline({ playlists }) {
           <section>
             <h2>{playlistName}</h2>
             <div>
-              {videos.map((video) => {
-                return (
-                  <a href={video.url}>
-                    <img src={video.thumb} />
-                    <span>{video.tittle}</span>
-                  </a>
-                );
-              })}
+              {videos
+                .filter((video) => {
+                  const titleNormalized = video.title.toLowerCase();
+                  const searchValueNormalized = valorDoFiltro.toLowerCase();
+                  return titleNormalized.includes(searchValueNormalized);
+                })
+                .map((video) => {
+                  return (
+                    <a key={video.url} href={video.url}>
+                      <img src={video.thumb} />
+                      <span>{video.title}</span>
+                    </a>
+                  );
+                })}
             </div>
           </section>
         );

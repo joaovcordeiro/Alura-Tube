@@ -4,10 +4,13 @@ import Timeline from "../src/Components/Timeline/Timeline";
 import { CSSReset } from "../src/Components/CSSReset.js";
 import Banner from "../src/Components/Banner/Banner";
 import Favorites from "../src/Components/Favorites/Favorites";
+import { useState } from "react";
 
 import configData from "../config.json";
 
 function HomePage() {
+  const [valorDoFiltro, setValorDoFiltro] = useState("");
+
   return (
     <>
       <CSSReset />
@@ -18,10 +21,13 @@ function HomePage() {
           flex: 1,
         }}
       >
-        <Menu />
+        <Menu setFiltro={setValorDoFiltro} valorDoFiltro={valorDoFiltro} />
         <Banner image={configData.banner} />
         <Header config={configData} />
-        <Timeline playlists={configData.playlists} />
+        <Timeline
+          playlists={configData.playlists}
+          valorDoFiltro={valorDoFiltro}
+        />
         <Favorites favorites={configData.favorites} />
       </div>
     </>

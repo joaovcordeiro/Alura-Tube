@@ -40,10 +40,8 @@ const StyledSearch = styled.div`
 // Informação sempre desce
 
 export default function Search({ valorDoFiltro, setValorDoFiltro }) {
-  const [valorDaBusca, setValorDaBusca] = useState("Frost");
-  // console.log("Search", valorDaBusca)
-  //   const valorDaBusca = valorDoFiltro;
-  //   const setValorDaBusca = setValorDoFiltro;
+  const valorDaBusca = valorDoFiltro;
+  const setValorDaBusca = setValorDoFiltro;
 
   return (
     <StyledSearch>
