@@ -7,7 +7,7 @@ export default function Timeline({ playlists, valorDoFiltro }) {
       {playlistsNames.map((playlistName) => {
         const videos = playlists[playlistName];
         return (
-          <section>
+          <section key={playlistName}>
             <h2>{playlistName}</h2>
             <div>
               {videos
@@ -37,7 +37,8 @@ export const StyledTimeline = styled.div`
   width: 100%;
   padding: 16px;
   overflow: hidden;
-  background-color: ${({ theme }) => theme.textColorBase || "#f9f9f9"};
+  background-color: ${({ theme }) => theme.backgroundBase || "#f9f9f9"};
+  color: ${({ theme }) => theme.textColorBase || "#222222"};
   h2 {
     font-size: 16px;
     margin-bottom: 16px;

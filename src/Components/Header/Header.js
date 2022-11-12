@@ -23,6 +23,9 @@ const StyledHeader = styled.div`
   }
 
   .user-info {
+    background-color: ${({ theme }) => theme.backgroundLevel1 || "#FFFFFF"};
+
+    color: ${({ theme }) => theme.textColorBase || "#222222"};
     display: flex;
     align-items: center;
     width: 100%;

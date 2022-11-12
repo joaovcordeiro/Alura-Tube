@@ -1,7 +1,6 @@
 import Header from "../src/Components/Header/Header";
 import Menu from "../src/Components/Menu/Menu";
 import Timeline from "../src/Components/Timeline/Timeline";
-import { CSSReset } from "../src/Components/CSSReset.js";
 import Banner from "../src/Components/Banner/Banner";
 import Favorites from "../src/Components/Favorites/Favorites";
 import { useState } from "react";
@@ -13,7 +12,6 @@ function HomePage() {
 
   return (
     <>
-      <CSSReset />
       <div
         style={{
           display: "flex",

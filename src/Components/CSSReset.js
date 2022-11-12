@@ -40,14 +40,14 @@ export const CSSReset = createGlobalStyle`
 
   @media (min-width: 1200px) {
     ::-webkit-scrollbar-track {
-    background-color: #f9f9f9;
+    background-color: ${({ theme }) => theme.backgroundBase || "#f9f9f9"};
     }
     ::-webkit-scrollbar {
         width: 6px;
         background: #F4F4F4;
     }
     ::-webkit-scrollbar-thumb {
-        background: #dad7d7;
+        background: ${({ theme }) => theme.borderBase || "#f9f9f9"};
     }
   }
 `;
